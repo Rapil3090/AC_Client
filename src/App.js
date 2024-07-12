@@ -1,15 +1,19 @@
 import React from 'react';
-import ImageUpload from './components/ImageUpload';
-import ImageGallery from './components/ImageGallery';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Upload from './pages/Upload';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Image Upload and Gallery</h1>
-      <ImageUpload />
-      <ImageGallery />
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/upload" element={<Upload />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
