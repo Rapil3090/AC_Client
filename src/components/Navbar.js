@@ -7,6 +7,8 @@ const NavBar = () => {
     <nav className="nav">
       <Link to="/" className="nav-link">Home</Link>
       <Link to="/upload" className="nav-link">Upload</Link>
+      <Link to="/mypage" className="nav-link">마이페이지</Link>
+      <Link to="/budget" className="nav-link">달력</Link>
     </nav>
   );
 };
