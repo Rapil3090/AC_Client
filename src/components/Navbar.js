@@ -9,6 +9,7 @@ const NavBar = () => {
       <Link to="/upload" className="nav-link">Upload</Link>
       <Link to="/mypage" className="nav-link">마이페이지</Link>
       <Link to="/budget" className="nav-link">달력</Link>
+      <Link to="/calendar" className="nav-link">달력그림</Link>
     </nav>
   );
 };

@@ -5,19 +5,103 @@
     gap: 1rem;
 }
 
-.calendar-day.empty {
-    background-color: transparent;
+.day-number {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.income {
+    color: green;
+}
+
+.expense {
+    color: red;
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .calendar-image {
+    position: relative;
+  }
+
+  .calendar-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .calendar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  
+  .calendar-day {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    width: 100%;
+    max-width: 600px;
 }
 
 .calendar-day {
     border: 1px solid #ccc;
-    padding: 1rem;
+    padding: 10px;
     text-align: center;
+    background-color: #f9f9f9;
+    position: relative;
 }
 
-.day-number {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+.calendar-day.empty {
+    background-color: transparent;
+    border: none;
+}
+
+.income, .expense {
+    font-size: 12px;
+    margin-top: 5px;
 }
 
 .income {
