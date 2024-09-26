@@ -1,16 +1,41 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import '../styles/NavBar.css';
 
 const NavBar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handleMouseEnter = () => {
+    setShowMenu(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowMenu(false);
+  };
+
   return (
-    <nav className="nav">
-      <Link to="/" className="nav-link">Home</Link>
-      <Link to="/upload" className="nav-link">Upload</Link>
-      <Link to="/mypage" className="nav-link">마이페이지</Link>
-      <Link to="/budget" className="nav-link">달력</Link>
-      <Link to="/calendar" className="nav-link">달력그림</Link>
-    </nav>
+    <div className="navbar">
+      <a href="#home">홈</a>
+      <div 
+      className="dropdown"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      >
+
+        <button className="dropbtn">
+          메뉴 1
+        </button>
+        {showMenu && ( 
+
+          <div className="dropdown-content">
+          <a href="#submenu1">서브메뉴 1</a>
+          <a href="#submenu2">서브메뉴 2</a>
+          <a href="#submenu3">서브메뉴 3</a>
+        </div>
+        )}
+        
+      </div>
+      <a href="#about">소개</a>
+    </div>
   );
 };
 
