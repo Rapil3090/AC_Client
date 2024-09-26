@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/NavBar.css';
 
 const NavBar = () => {
@@ -14,7 +15,7 @@ const NavBar = () => {
 
   return (
     <div className="navbar">
-      <a href="#home">홈</a>
+      <Link to="/home">홈</Link>
       <div 
       className="dropdown"
       onMouseEnter={handleMouseEnter}
